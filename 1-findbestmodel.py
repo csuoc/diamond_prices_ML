@@ -1,4 +1,6 @@
-  
+import warnings
+warnings.filterwarnings("ignore")
+
 #Read
 import pandas as pd
 df = pd.read_csv("data/train.csv")
@@ -20,7 +22,7 @@ y = df["price"]
     
 # Splitting
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
     
 # Checking
 try:
@@ -50,7 +52,7 @@ models = {
 "svr": SVR(),
 "randomregressor": RandomForestRegressor(),
 "decisiontree": DecisionTreeRegressor(),
-"catboost": CatBoostRegressor(),
+"catboost": CatBoostRegressor(loss_function="RMSE"),
 "xgboost": XGBRegressor()
 }
     

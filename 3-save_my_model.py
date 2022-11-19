@@ -1,9 +1,12 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 #Read
 import pandas as pd
 train = pd.read_csv("data/train.csv")
     
 #Drop useless columns
-train.drop(["depth", "table", "x", "y", "z"], axis=1, inplace=True)
+train.drop(["depth", "table"], axis=1, inplace=True)
     
 # Label encoder
 from sklearn import preprocessing
@@ -27,14 +30,11 @@ except:
 
 from catboost import CatBoostRegressor
     
-models = {
-"catboost": CatBoostRegressor(),
-}
+model = CatBoostRegressor(loss_function="RMSE", depth = 7, learning_rate = 0.075, iterations = 700, l2_leaf_reg = 1, random_strength=5, bagging_temperature=None, border_count=1024)
     
 # Fitting
-for name, model in models.items():
-    print("Fitting: ", name)
-    model.fit(X_train, y_train)
+
+model.fit(X_train, y_train)
     
 # Save model
     

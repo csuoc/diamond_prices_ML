@@ -21,4 +21,4 @@ testclean['price'] = y_pred
 test_for_submission = testclean[["id", "price"]]
 
 # Save
-test_for_submission.to_csv("my_submission.csv", index=False)
+test_for_submission.to_csv("submissions/my_submission.csv", index=False)
