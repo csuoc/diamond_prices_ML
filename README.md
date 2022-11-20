@@ -132,9 +132,17 @@ The best **CatBoostRegressor** parameters found thanks to OpenGridCSV were:
 | --- |
 | 0.992573219163065 |
 
+| Parameter | Value |
+| --- | --- |
+| loss_function | RMSE |
+| bagging_temperature | 0 |
+| depth | 6 |
+| iterations | 1100 |
+| l2_leaf_reg | 0.25 |
+| learning_rate | 0.1 |
+| random_strength | 10 |
 
-
-After an iteration that took 4 hours
+After an iteration that took 10 hours
 
 | Model | MAE | MSE | RMSE | R^2 |
 | --- | --- | --- | --- | --- |
