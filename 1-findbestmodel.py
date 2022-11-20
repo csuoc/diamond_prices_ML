@@ -6,7 +6,7 @@ import pandas as pd
 df = pd.read_csv("data/train.csv")
     
 #Drop useless columns
-df.drop(["depth", "table", "x", "y", "z"], axis=1, inplace=True)
+df.drop(["depth", "table"], axis=1, inplace=True)
     
 # Label encoder
 from sklearn import preprocessing

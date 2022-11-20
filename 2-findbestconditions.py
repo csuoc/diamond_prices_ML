@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv("data/train.csv")
     
 #Drop useless columns
-df.drop(["depth", "table", "x", "y", "z"], axis=1, inplace=True)
+df.drop(["depth", "table"], axis=1, inplace=True)
     
 # Label encoder
 from sklearn import preprocessing
@@ -38,13 +38,13 @@ model_CBR = CatBoostRegressor()
 parameters = {'loss_function':["RMSE"],
               'depth' : [5,6,7,8],
               'learning_rate' : [0.075, 0.1, 0.3],
-              'iterations'    : [600,700,800,1000],
+              'iterations'    : [700,800,1000,1100],
               'l2_leaf_reg': [0.25, 0.5, 1],
               'bagging_temperature': [0, 1],
               'random_strength':[5,10,15]
              }
 
-grid = GridSearchCV(estimator=model_CBR, param_grid = parameters, cv = 3, n_jobs=-1)
+grid = GridSearchCV(estimator=model_CBR, param_grid = parameters, n_jobs=-1)
 
 # Fitting
 

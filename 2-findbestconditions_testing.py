@@ -35,7 +35,7 @@ except:
 from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
 
-model_CBR = CatBoostRegressor(loss_function="RMSE", depth = 7, learning_rate = 0.075, iterations = 700, l2_leaf_reg = 1, random_strength=5, bagging_temperature=None, border_count=1024)
+model_CBR = CatBoostRegressor(loss_function="RMSE", depth = 6, learning_rate = 0.1, iterations = 1100, l2_leaf_reg = 0.25, random_strength=10, bagging_temperature=0)
 #model_RFR = RandomForestRegressor()
 
 # Fitting
