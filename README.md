@@ -37,7 +37,7 @@ Two datasets were available for this project:
 
 It returns the metric error MAE, MSE, RMSE, R^2. It helps choose the model with the less error and highest R^2 values.
 
-**2-findbestconditions.py:** it takes the best model from the previous file (CatBoostRegressor) and fine-tunes its performance. The best performance is analyzed by GridSearchCV: it iterates the model according the given parameters.
+**2-findbestconditions.py:** it takes the best model from the previous file (CatBoostRegressor) and fine-tunes its performance by re-splitting the file 80%-20%. The best performance is analyzed by GridSearchCV: it iterates the model according the given parameters.
 It returns the hyperparameters with the best conditions.
 
 **3-savemymodel.py:** the train.csv is full taken (no split this time) and trained according the best parameters found in findbestconditions.py. Then, the model is saved thanks to the Pickle library.
