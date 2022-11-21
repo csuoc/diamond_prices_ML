@@ -187,6 +187,7 @@ In this was the FINAL score in the private leaderboard, only available after the
 
 <img src="images/finalprivatescore.JPG">
 
+#### I won the competition!
 
 <br>
 <br>
