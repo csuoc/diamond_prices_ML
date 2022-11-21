@@ -3,7 +3,7 @@
 Precious stones like diamond are in high demand in the investment market due to their monetary rewards. Thus, it is of utmost importance to the diamond dealers to predict the accurate price.
 However, the prediction process is difficult due to the wide variation in the diamond stones sizes and characteristics. In this work, several machine learning models were used to help in predicting diamond price, among them Linear regression, Random forest regression, or boost regression. After training several models, testing their accuracy and analyzing their results, the best of them turns out to be catboost regression with an accuracy of 99.25%.
 
-<img src=images/gif.gif width=400>
+<img src=images/gif.gif width=450>
 
 
 ## 1. Objective
@@ -80,7 +80,7 @@ According to **Mihir et al.** (**DOI: 10.1109/C2I454156.2021.9689412**), the fea
 
 In order to confirm this theory, it was necessary to calculate the correlation Pearson coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
 
-<img src="images/Correlationmatrix.png">
+<img src="images/Correlationmatrix.png" width=450>
 
 Interestingly, in this case it seems that width (x), length (y) and depth (z) have strong correlation with price, along with carat.
 
