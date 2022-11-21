@@ -38,13 +38,13 @@ Two datasets were available for this project:
 It returns the metric error MAE, MSE, RMSE, R^2. It helps choose the model with the less error and highest R^2 values.
 
 **2-findbestconditions.py:** it takes the best model from the previous file (CatBoostRegressor) and fine-tunes its performance. The best performance is analyzed by GridSearchCV: it iterates the model according the given parameters.
-It returns the parameters with the best conditions.
+It returns the hyperparameters with the best conditions.
 
-**3-savemymodel.py:** the train.csv is split and trained according the best parameters found in findbestconditions.py. Then, the model is saved thanks to the Pickle library.
+**3-savemymodel.py:** the train.csv is full taken (no split this time) and trained according the best parameters found in findbestconditions.py. Then, the model is saved thanks to the Pickle library.
 
 **4-cleantest.py:** the test.csv file is cleaned according the steps made in train.csv. It returns the file testclean.csv
 
-**5-sampleforsubmission.py:** loads the file testclean.csv and the best model. The model makes the price prediction according to testclean.csv. It returns the csv with only ID and predicted price ready for submission.
+**5-sampleforsubmission.py:** loads the file testclean.csv and the best model. The model makes the price prediction according to testclean.csv. It returns the csv with only ID and predicted price, ready for submission.
 
 <br>
 
