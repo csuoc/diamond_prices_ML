@@ -131,4 +131,4 @@ dmypy.json
 # Catboost
 
 catboost_info/
-testing_best_model.py
+.testing_best_model.py
