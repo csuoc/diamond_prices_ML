@@ -21,7 +21,7 @@ Two datasets were available for this project:
 
 **Root**
 
-**1-findbestmodel.py:** it performs a series of cleaning tasts, such removing unnecessary columns and label encodoing some values. It also splits train.csv dataset in 80% training and 20% testing. The 80% is trained with several models:
+**1-findbestmodel.py:** it performs a series of cleaning tasks, such removing unnecessary columns and label encodoing some values. It also splits train.csv dataset in 80% training and 20% testing. The 80% is trained with several models:
 
 - Linear Regression
 - Ridge
@@ -80,7 +80,7 @@ With the confidence of having a clean dataset, it was time to understand all the
 
 According to **Mihir et al.** (**DOI: 10.1109/C2I454156.2021.9689412**), the features that define a diamond are clarity, weight, cut, width, length, depth and color. However, the most crucial factors or main features are cut, clarity, color, and weight (carat), which are also known as the 4C.
 
-In order to confirm this theory, it was necessary to calculate the correlation Pearson coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
+In order to confirm this theory, it was necessary to calculate the Pearson correlation coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
 
 <img src="images/Correlationmatrix.png" width=480>
 
@@ -185,7 +185,6 @@ In this was the FINAL score in the private leaderboard, only available after the
 
 <img src="images/finalprivatescore.JPG">
 
-##### I won the competition!
 
 <br>
 <br>
