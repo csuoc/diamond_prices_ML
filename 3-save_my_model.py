@@ -30,7 +30,7 @@ except:
 
 from catboost import CatBoostRegressor
     
-model = CatBoostRegressor(loss_function="RMSE", depth = 6, learning_rate = 0.1, iterations = 1100, l2_leaf_reg = 0.25, random_strength=10, bagging_temperature=0)
+model = CatBoostRegressor(loss_function="RMSE", depth = 6, learning_rate = 0.1, iterations = 900, l2_leaf_reg = 0.25, random_strength=10, grow_policy="SymmetricTree")
     
 # Fitting
 

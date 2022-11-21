@@ -1,9 +1,10 @@
 # Predicting diamond prices using machine learning
 
 Precious stones like diamond are in high demand in the investment market due to their monetary rewards. Thus, it is of utmost importance to the diamond dealers to predict the accurate price.
-However, the prediction process is difficult due to the wide variation in the diamond stones sizes and characteristics. In this work, several machine learning models were used to help in
-predicting diamond price, among them Linear regression, Random
-forest regression, or boost regression. After training several models, testing their accuracy and analyzing their results, it it turns out that the best of them is the catboost regression.
+However, the prediction process is difficult due to the wide variation in the diamond stones sizes and characteristics. In this work, several machine learning models were used to help in predicting diamond price, among them Linear regression, Random forest regression, or boost regression. After training several models, testing their accuracy and analyzing their results, the best of them turns out to be catboost regression with an accuracy of 99.25%.
+
+<img src=images/gif.gif width=400>
+
 
 ## 1. Objective
 
@@ -81,21 +82,25 @@ In order to confirm this theory, it was necessary to calculate the correlation P
 
 <img src="images/Correlationmatrix.png" width=500>
 
-Interestingly, in this case it seems that width (x), length(y) and depth(z) have strong correlation with price, along with carat.
+Interestingly, in this case it seems that width (x), length (y) and depth (z) have strong correlation with price, along with carat.
 
 **Therefore, I would not consider removing x, y, z columns from the dataset, but only depth, table and id.**
+
+However, there is a strong possibility that the outliers could affect the model predictions, as shown in the following boxplot:
+
+<img src=images/boxplot.png>
 
 ### 4.1. Label encoding
 
 Label encoding is necessary to transform categorical data into numerical data. In this case, I had to convert "cut", "clarity" and "color" columns.
 
-"Cut" contains the following variables: Fair, Good, Very Good, Ideal and Premium.
+**"Cut"** contains the following variables: Fair, Good, Very Good, Ideal and Premium.
 
-"Color" contains the following variables: D, E, F, G, H, I, J (D is the best, J the worst).
+**"Color"** contains the following variables: D, E, F, G, H, I, J (D is the best, J the worst).
 
-"Clarity" contians the following variables: VS2, VVS2, VVS1, VS1, SI1, SI2, I1, IF (IF is the best, I1 is the worst).
+**"Clarity"** contians the following variables: VS2, VVS2, VVS1, VS1, SI1, SI2, I1, IF (IF is the best, I1 is the worst).
 
-Label encoding was performed by importing preprocessing module from sklearn:
+**Label encoding** was performed by importing preprocessing module from sklearn:
 
 ```python
 from sklearn import preprocessing
@@ -108,7 +113,7 @@ This is the final result:
 
 ## 5. Choosing the model
 
-The result of the training with all the models mentioned before are shown below:
+The result of the training (80% train.csv) with all the models mentioned before are shown below:
 
 | Model | MAE | MSE | RMSE | R^2 |
 | --- | --- | --- | --- | --- |
@@ -124,9 +129,18 @@ The result of the training with all the models mentioned before are shown below:
 | **CatBoostRegressor** | **0.06359050568687474** | **0.0076441673537018025** | **0.08743092904517144** | **0.9925877764517658** |
 | XGBRegressor | 0.06406989942264711 | 0.00798898754415812 | 0.08938113640001519 | 0.9922534189975991 |
 
+R^2 comparison:
+<img src="images/modelscomparison.png">
+RMSE comparison:
+<img src="images/rmsecomparison.png">
+
 ## 6. Tuning the model
 
-The best **CatBoostRegressor** parameters found thanks to OpenGridCSV were:
+The best **CatBoostRegressor** hyperparameters were found with OpenGridCSV:
+
+```python
+grid = GridSearchCV(estimator=model_CBR, cv=3, param_grid = parameters, n_jobs=-1)
+```
 
 | Best score across all searched params |
 | --- |
@@ -141,13 +155,16 @@ The best **CatBoostRegressor** parameters found thanks to OpenGridCSV were:
 | l2_leaf_reg | 0.25 |
 | learning_rate | 0.1 |
 | random_strength | 10 |
+| border_count | 128 |
+| grow_policy | SymmetricTree |
 
-After an iteration that took 10 hours
+After an iteration that took 10 hours, the best prediction so far was the following:
 
 | Model | MAE | MSE | RMSE | R^2 |
 | --- | --- | --- | --- | --- |
 | CatBoostRegressor (tuned) | 0.0617569806808425 | 0.007352739569756394 | 0.08574811700414414 | 0.9929259938024839 |
 
+<img src=images/mymodel.png width=400>
 
 ## 7. Submission sample
 
@@ -157,9 +174,17 @@ This is the final csv file:
 
 ## 8. Kaggle leaderboard
 
-This was my position in the ranking
+This was my position in the public ranking (calulated with approximately 30% of the data)
 
-<img src="images/finalscore.JPG">
+<img src="images/finalpublicscore.jpg">
+
+In this was the FINAL score in the private leaderboard, only available after the deadline:
+
+<img src="images/finalprivatescore.JPG">
+
+##### I won the competition!
+
+<img src=images/meme.JPG>
 
 ## 9. Links and resources
 

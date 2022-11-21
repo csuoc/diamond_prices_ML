@@ -20,7 +20,7 @@ y = df["price"]
     
 # Splitting
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
     
 # Checking
 try:
@@ -36,7 +36,7 @@ from sklearn.model_selection import GridSearchCV
 model_CBR = CatBoostRegressor()
 
 parameters = {'loss_function':["RMSE"],
-              'depth' : [5,6,7,8],
+              'depth' : [5,6,7],
               'learning_rate' : [0.075, 0.1, 0.3],
               'iterations'    : [700,800,1000,1100],
               'l2_leaf_reg': [0.25, 0.5, 1],
@@ -44,7 +44,7 @@ parameters = {'loss_function':["RMSE"],
               'random_strength':[5,10,15]
              }
 
-grid = GridSearchCV(estimator=model_CBR, param_grid = parameters, n_jobs=-1)
+grid = GridSearchCV(estimator=model_CBR, cv=3, param_grid = parameters, n_jobs=-1)
 
 # Fitting
 

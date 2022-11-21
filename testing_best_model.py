@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore")
 #Read
 import pandas as pd
 df = pd.read_csv("data/train.csv")
-    
+ 
 #Drop useless columns
 df.drop(["depth", "table"], axis=1, inplace=True)
     
@@ -33,15 +33,13 @@ except:
 # Importing model and parameters
 
 from catboost import CatBoostRegressor
-from sklearn.ensemble import RandomForestRegressor
 
-model_CBR = CatBoostRegressor(loss_function="RMSE", depth = 6, learning_rate = 0.1, iterations = 1100, l2_leaf_reg = 0.25, random_strength=10, bagging_temperature=0)
-#model_RFR = RandomForestRegressor()
+model_CBR = CatBoostRegressor(loss_function="RMSE", depth = 6, learning_rate = 0.1, iterations = 900, l2_leaf_reg = 0.25, random_strength=10, grow_policy="SymmetricTree")
 
 # Fitting
 
 model_CBR.fit(X_train, y_train)
-#model_RFR.fit(X_train, y_train)
+
 
 # Get errors
 from sklearn import metrics
