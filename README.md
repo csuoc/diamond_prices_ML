@@ -80,7 +80,7 @@ With the confidence of having a clean dataset, it was time to understand all the
 
 According to **Mihir et al.** (**DOI: 10.1109/C2I454156.2021.9689412**), the features that define a diamond are clarity, weight, cut, width, length, depth and color. However, the most crucial factors or main features are cut, clarity, color, and weight (carat), which are also known as the 4C.
 
-In order to confirm this theory, it was necessary to calculate the Pearson correlation coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
+In order to confirm this theory, it was necessary to calculate the Pearson correlation coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Please take into account that "cut" and "clarity" can not be computed because the values are strings.
 
 <img src="images/Correlationmatrix.png">
 
@@ -145,7 +145,7 @@ The best **CatBoostRegressor** hyperparameters were found with OpenGridCSV:
 grid = GridSearchCV(estimator=model_CBR, cv=3, param_grid = parameters, n_jobs=-1)
 ```
 
-<img src="images/loop.gif" width=400>
+<img src="images/loop.gif" width=500>
 
 | Best score across all searched params |
 | --- |
