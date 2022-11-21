@@ -80,7 +80,7 @@ According to **Mihir et al.** (**DOI: 10.1109/C2I454156.2021.9689412**), the fea
 
 In order to confirm this theory, it was necessary to calculate the correlation Pearson coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
 
-<img src="images/Correlationmatrix.png" width=500>
+<img src="images/Correlationmatrix.png">
 
 Interestingly, in this case it seems that width (x), length (y) and depth (z) have strong correlation with price, along with carat.
 
@@ -164,7 +164,7 @@ After an iteration that took 10 hours, the best prediction so far was the follow
 | --- | --- | --- | --- | --- |
 | CatBoostRegressor (tuned) | 0.0617569806808425 | 0.007352739569756394 | 0.08574811700414414 | 0.9929259938024839 |
 
-<img src=images/mymodel.png width=400>
+<img src=images/mymodel.png>
 
 ## 7. Submission sample
 
@@ -183,6 +183,10 @@ In this was the FINAL score in the private leaderboard, only available after the
 <img src="images/finalprivatescore.JPG">
 
 ##### I won the competition!
+
+<br>
+<br>
+Fun fact: did you know that diamonds are not as indestructible as commonly thought?
 
 <img src=images/meme.JPG>
 
