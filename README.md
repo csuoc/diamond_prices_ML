@@ -46,19 +46,21 @@ It returns the parameters with the best conditions.
 
 **5-sampleforsubmission.py:** loads the file testclean.csv and the best model. The model makes the price prediction according to testclean.csv. It returns the csv with only ID and predicted price ready for submission.
 
-**data/**
+<br>
+
+**Data/**
 
 Contains all the datasets and the returning .csv files
 
-**images/**
+**Images/**
 
 Images to complement the readme file
 
-**models/**
+**Models/**
 
 Contains the model file
 
-**submissions/**
+**Submissions/**
 
 Contains the csv file ready for submission
 
