@@ -80,7 +80,7 @@ According to **Mihir et al.** (**DOI: 10.1109/C2I454156.2021.9689412**), the fea
 
 In order to confirm this theory, it was necessary to calculate the correlation Pearson coefficient between all the variables. By plotting the result in a heatmap, one could easily see the relation between all the parameters. Pleasetake into account that "cut" and "clarity" can not be computed because the values are strings.
 
-<img src="images/Correlationmatrix.png" width=450>
+<img src="images/Correlationmatrix.png" width=480>
 
 Interestingly, in this case it seems that width (x), length (y) and depth (z) have strong correlation with price, along with carat.
 
@@ -131,6 +131,7 @@ The result of the training (80% train.csv) with all the models mentioned before 
 
 R^2 comparison:
 <img src="images/modelscomparison.png">
+
 RMSE comparison:
 <img src="images/rmsecomparison.png">
 
