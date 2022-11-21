@@ -145,6 +145,8 @@ The best **CatBoostRegressor** hyperparameters were found with OpenGridCSV:
 grid = GridSearchCV(estimator=model_CBR, cv=3, param_grid = parameters, n_jobs=-1)
 ```
 
+<img src="images/loop.gif" width=400>
+
 | Best score across all searched params |
 | --- |
 | 0.992573219163065 |
