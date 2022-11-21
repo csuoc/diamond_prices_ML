@@ -149,7 +149,7 @@ grid = GridSearchCV(estimator=model_CBR, cv=3, param_grid = parameters, n_jobs=-
 | --- |
 | 0.992573219163065 |
 
-| Parameter | Value |
+| Hyperparameter | Best value |
 | --- | --- |
 | loss_function | RMSE |
 | bagging_temperature | 0 |
